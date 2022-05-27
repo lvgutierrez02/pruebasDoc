@@ -20,7 +20,8 @@ namespace prueba2.Controllers
         }
 
         [HttpPost]
-        [Route("Documento")]
+        [Route("Subir")]
+        [DisableRequestSizeLimit,RequestFormLimits(MultipartBodyLengthLimit =int.MaxValue, ValueLengthLimit =int.MaxValue)]//configura el tamaño del documento
         public IActionResult Subir([FromForm] Documento request)
         {//recibe un documento desde el cuerpo de un formulario
 
